@@ -1,27 +1,15 @@
 export const studies = [
   {
-    title: "B.S. in Computer Science",
-    institution: "State University",
+    title: "Professional degree in computer science, networks, and telecommunications, with a focus on software architecture",
+    institution: "ESGIS ",
     description:
-      "Core CS foundations: data structures, algorithms, operating systems, networking, and databases; team capstone in web systems.",
+      "Focus on distributed systems, testing strategies, and cloud architecture; thesis on resilience patterns in microservices.",
     tags: [
-      "Algorithms",
+     "Algorithms",
       "Data Structures",
       "Operating Systems",
       "Databases",
       "Networking",
-    ],
-  },
-  {
-    title: "M.S. in Software Engineering",
-    institution: "Tech Institute",
-    description:
-      "Focus on distributed systems, testing strategies, and cloud architecture; thesis on resilience patterns in microservices.",
-    tags: [
-      "Distributed Systems",
-      "Cloud Architecture",
-      "Testing",
-      "Microservices",
     ],
   },
 ];

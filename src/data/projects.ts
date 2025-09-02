@@ -7,52 +7,64 @@ import TailwindIcon from '../assets/logos/Tailwind-logo.svg?raw';
 
 
 export const projects = [
+
+
+	// 	{
+	// 	"name": "",
+	// 	"description": "Vente et location de matériaux de constructions.",
+	// 	"img": "/assets/images/projects/bati-vie.jpeg",
+	// 	"url": "https://bati-vie-tfw7.vercel.app/home "
+	// },
+	// {
+	// 	"name": "Colloc Services",
+	// 	"description": "Vente et réservation de voitures.",
+	// 	"img": "/assets/images/projects/colloc.jpeg",
+	// 	"url": "https://colloc.vercel.app"
+	// },
+	// {
+	// 	"name": "Funiro",
+	// 	"description": "Un site qui permet de donner de la visibilité pour vendre des meubles.",
+	// 	"img": "/assets/images/projects/funiro.jpeg",
+	// 	"url": "https://funiro-phi.vercel.app/"
+	// },
+	// {
+	// 	"name": "Food",
+	// 	"description": "Un site de commande de repas / rapide / sécurisé.",
+	// 	"img": "/assets/images/projects/food.jpeg",
+	// 	"url": "https://food-gilt-xi.vercel.app"
+	// }
+
+
 	{
-		title: "Workflow Automation Orchestrator (n8n)",
-		techStack: "n8n • Node.js • TypeScript • PostgreSQL",
-		description: "Event‑driven workflows for data sync, notifications, and back‑office automation. Custom nodes, secrets management, retries, and metrics.",
+		title: "BatiVie",
+		techStack: "React.js • JavaScript • Bootstrap",
+		description: "Vente et location de matériaux de constructions.",
 		ctaText: "View Repo →",
 		ctaLink: "#",
 		icon: N8nIcon
 	},
 	{
-		title: "SaaS API Starter (Auth, Billing, RBAC)",
-		techStack: "Node.js • TypeScript • PostgreSQL • Supabase • Stripe",
-		description: "Production‑ready REST/GraphQL API with JWT auth, role‑based access, Stripe subscriptions, and rate‑limited endpoints.",
+		title: "Colloc Services",
+		techStack: "Html • Css • JavaScript • Bootstrap • Figma",
+		description: "Vente et réservation de voitures.",
 		ctaText: "Get Source < / >",
 		ctaLink: "#",
 		icon: SupabaseIcon
 	},
 	{
-		title: "Realtime Chat Service",
-		techStack: "Phoenix • WebSockets • Redis • Docker",
-		description: "Low‑latency chat with channels, presence, and backpressure handling. Includes load tests and horizontal scaling notes.",
+		title: "Funiro",
+		techStack: "Html • Css • JavaScript • Bootstrap • Figma",
+		description: "Un site qui permet de donner de la visibilité pour vendre des meubles.",
 		ctaText: "Live Demo →",
 		ctaLink: "#",
 		icon: PhoenixIcon
 	},
 	{
-		title: "Product Analytics Pipeline",
-		techStack: "Node.js • PostHog • PostgreSQL • ClickHouse",
-		description: "Event ingestion, batching, and replay; user properties and cohorts; dashboards for funnels, retention, and feature adoption.",
+		title: "Food",
+		techStack: "Html • Css • JavaScript • Bootstrap • Figma",
+		description: "Un site de commande de repas / rapide / sécurisé.",
 		ctaText: "Read Case Study →",
 		ctaLink: "#",
 		icon: PosthogIcon
-	},
-	{
-		title: "Data Ingestion & ETL",
-		techStack: "Python • Airflow • PostgreSQL • S3",
-		description: "Scheduled extract/transform/load with schema migrations, data quality checks, and partitioned tables for analytics.",
-		ctaText: "View Repo →",
-		ctaLink: "#",
-		icon: PythonIcon
-	},
-	{
-		title: "Design System",
-		techStack: "React • TypeScript • Tailwind CSS • Storybook",
-		description: "Accessible UI kit with tokens, theming, and testing. Published as a versioned package with changelogs and docs.",
-		ctaText: "Docs →",
-		ctaLink: "#",
-		icon: TailwindIcon
 	},
 ];
