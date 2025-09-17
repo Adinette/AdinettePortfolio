@@ -32,34 +32,40 @@ export const projects = [
 	// 	"img": "/assets/images/projects/food.jpeg",
 	// 	"url": "https://food-gilt-xi.vercel.app"
 	// }
-
-
 	{
-		title: "BatiVie",
-		techStack: "React.js • JavaScript • Bootstrap",
-		description: "Vente et location de matériaux de constructions.",
-		ctaText: "View Repo →",
+		title: "TodoList App",
+		techStack: "Vuejs • TypeScript • NodeJs • Tailwind",
+		description: "Front-end and back-end task management applications",
+		ctaText: "Live Demo →",
 		ctaLink: "#",
 	},
 	{
 		title: "Colloc Services",
 		techStack: "Html • Css • JavaScript • Bootstrap • Figma",
-		description: "Vente et réservation de voitures.",
-		ctaText: "Get Source < / >",
+		description: "Car sales and reservations.",
+		ctaText: "Live Demo →",
 		ctaLink: "#",
 	},
 	{
+		title: "BatiVie",
+		techStack: "React.js • JavaScript • Bootstrap",
+		description: "Sale and rental of building materials.",
+		ctaText: "Live Demo →",
+		ctaLink: "#",
+	},
+
+	{
 		title: "Funiro",
 		techStack: "Html • Css • JavaScript • Bootstrap • Figma",
-		description: "Un site qui permet de donner de la visibilité pour vendre des meubles.",
+		description: "A website that provides visibility for selling furniture.",
 		ctaText: "Live Demo →",
 		ctaLink: "#",
 	},
 	{
 		title: "Food",
 		techStack: "Html • Css • JavaScript • Bootstrap • Figma",
-		description: "Un site de commande de repas / rapide / sécurisé.",
-		ctaText: "Read Case Study →",
+		description: "A fast and secure meal ordering website.
+		ctaText: "Live Demo →",
 		ctaLink: "#",
 	},
 ];
