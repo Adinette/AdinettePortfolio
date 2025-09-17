@@ -37,7 +37,7 @@ export const projects = [
 	{
 		title: "Food",
 		techStack: "Html • Css • JavaScript • Bootstrap • Figma",
-		description: "A fast and secure meal ordering website".
+		description: "A fast and secure meal ordering website.",
 		ctaText: "Live Demo →",
 		ctaLink: "#",
 	},
