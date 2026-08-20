@@ -10,35 +10,27 @@ import WorkExperience from '../components/sections/WorkExperience.astro';
 import { work } from '../data/work';
 import Studies from '../components/sections/Studies.astro';
 import { studies } from '../data/studies';
-import Carousel from '../components/ui/carousel/Carousel.astro';
-import { logos } from '../data/logos';
-import ArrowSeparator from '../components/ui/separator/ArrowSeparator.astro'
-import GlowLineSeparator from '../components/ui/separator/GlowLineSeparator.astro'
-
-// Logos
-import astroLogo from '../assets/logos/Astro-logo.svg';
-import googleAdsLogo from '../assets/logos/GoogleAds-logo.svg';
-import posthogLogo from '../assets/logos/posthog-logo.svg';
-import notionLogo from '../assets/logos/Notion-logo.svg';
-import figmaLogo from '../assets/logos/Figma-logo.svg';
-
-// skills are imported from src/data/skills
+import Projects from '../components/sections/Projects.astro';
+import ArrowSeparator from '../components/ui/separator/ArrowSeparator.astro';
+import GlowLineSeparator from '../components/ui/separator/GlowLineSeparator.astro';
+import { author } from '../data/author';
 ---
 
 <!doctype html>
-<html lang="en" data-theme="dark" class="dark">
+<html lang="fr" data-theme="dark" class="dark">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <!-- JSON-LD: Organization -->
+    <!-- JSON-LD: Person -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'Adinette D.',
+      '@type': 'Person',
+      name: author.name,
+      jobTitle: author.title,
+      email: author.email,
       url: new URL('/', Astro.site).toString(),
-      logo: new URL('/favicon.svg', Astro.site).toString(),
       sameAs: [
-        'https://github.com/Adinette',
-        'https://www.linkedin.com/in/adinette-dougloui-768259269',
+        author.github,
+        author.linkedin,
       ],
     })} />
 	</head>
@@ -46,24 +38,63 @@ import figmaLogo from '../assets/logos/Figma-logo.svg';
 		<Header />
 		<main>
       <HeroSection
-        title="Hello, I'm Adinette DOUGLOUI |"
-        subtitle='Front-end developer'
-        description="I build single-page applications (SPAs), landing pages, mobile-friendly web applications, progressive web applications (PWAs), and API integrations."
+        title="Adinette DOUGLOUI"
+        subtitleFr="Développeur Web Front-End"
+        subtitleEn="Front-End Web Developer"
+        descriptionFr="Créatrice d'interfaces web modernes, intuitives et performantes avec Vue.js 3, React.js, Next.js et TypeScript. Expertise en intégration Figma haute fidélité, éditeurs visuels complexes (Vue Flow), APIs REST et déploiements cloud."
+        descriptionEn="Crafting modern, intuitive, and performant web interfaces with Vue.js 3, React.js, Next.js, and TypeScript. Specialized in high-fidelity Figma pixel translation, visual editor engines (Vue Flow), REST APIs, and cloud deployments."
+        badgeFr="Disponible pour opportunités Front-End"
+        badgeEn="Available for Front-End Opportunities"
         showCTA
-        primaryCTA={{ text: 'View Projects', href: '/portfolio' }}
-        secondaryCTA={{ text: 'About Me', href: '/about' }}
+        primaryCTA={{ textFr: 'Découvrir mes projets', textEn: 'Explore Projects', href: '#projects' }}
+        secondaryCTA={{ textFr: 'En savoir plus sur moi', textEn: 'About Me', href: '/about' }}
+        tertiaryCTA={{ textFr: 'Me contacter', textEn: 'Contact Me', href: '#contact' }}
       />
-     
 
-    <section class="py-6">
-      <ArrowSeparator />
-      <SkillsSection title="Skills & Tools" skills={skills} />   
-      <ArrowSeparator />
-      <WorkExperience title="Work Experience" items={work} />
-      <ArrowSeparator />
-      <Studies title="Studies" items={studies} />
-      <GlowLineSeparator />
-    </section>
+      <section class="py-6 space-y-6">
+        <ArrowSeparator />
+        
+        <!-- Featured Projects Section -->
+        <Projects 
+          titleFr="Projets & Réalisations Clés" 
+          titleEn="Featured Projects & Key Work"
+          subtitleFr="Une sélection d'applications web full-stack, d'outils no-code et de plateformes déployées en production."
+          subtitleEn="A curated selection of full-stack web applications, no-code visual tools, and deployed production platforms."
+        />
+
+        <ArrowSeparator />
+
+        <!-- Comprehensive Skills Matrix -->
+        <SkillsSection 
+          titleFr="Compétences Techniques & Outils" 
+          titleEn="Technical Skills & Stack"
+          subtitleFr="Une vue exhaustive de l'écosystème technique et des technologies manipulées au quotidien."
+          subtitleEn="A comprehensive view of the technical ecosystem and tools mastered day-to-day."
+          skills={skills} 
+        />   
+
+        <ArrowSeparator />
+
+        <!-- Work Experience Timeline -->
+        <WorkExperience 
+          titleFr="Expérience Professionnelle" 
+          titleEn="Work Experience"
+          items={work} 
+        />
+
+        <ArrowSeparator />
+
+        <!-- Studies & Training -->
+        <Studies 
+          titleFr="Formations & Immersion" 
+          titleEn="Education & Internships"
+          subtitleFr="Parcours académique en génie logiciel et montée en compétences continue."
+          subtitleEn="Academic degree in software engineering and continuous technical learning."
+          items={studies} 
+        />
+
+        <GlowLineSeparator />
+      </section>
 		</main>
 		<Footer />
 	</body>

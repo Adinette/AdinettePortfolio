@@ -1,31 +1,34 @@
 ---
-import Timeline from "../ui/timeline/Timeline.astro";
-import { workIcons } from "../../data/work";
-
-interface ExperienceItem {
-  title: string;
-  company: string;
-  region: string;
-  description: string;
-  technologies?: string[];
-}
+import Timeline from '../ui/timeline/Timeline.astro';
 
 interface Props {
-  items: ExperienceItem[];
-  title?: string;
+  titleFr?: string;
+  titleEn?: string;
+  subtitleFr?: string;
+  subtitleEn?: string;
+  items: any[];
 }
 
-const { items, title } = Astro.props as Props;
+const {
+  titleFr = "Expérience Professionnelle",
+  titleEn = "Work Experience",
+  subtitleFr = "Mon parcours en entreprise et mes réalisations clés au sein d'équipes agiles.",
+  subtitleEn = "My corporate trajectory and key achievements working within agile teams.",
+  items = []
+} = Astro.props;
 ---
 
-<section class="w-full py-8">
-  <div class="mx-auto max-w-6xl px-5 md:px-6">
-    {title && (
-      <h2 class="text-3xl md:text-4xl font-semibold text-center mb-10 text-foreground">{title}</h2>
-    )}
-
-    <Timeline items={items} icons={workIcons} centered={false}/>
+<section id="experience" class="py-8">
+  <div class="text-center max-w-3xl mx-auto mb-10">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-[color:var(--color-text-primary)] tracking-tight mb-2">
+      <span class="lang-fr">{titleFr}</span>
+      <span class="lang-en">{titleEn}</span>
+    </h2>
+    <p class="text-sm md:text-base text-[color:var(--color-text-secondary)]">
+      <span class="lang-fr">{subtitleFr}</span>
+      <span class="lang-en">{subtitleEn}</span>
+    </p>
   </div>
+
+  <Timeline items={items} />
 </section>
-
-

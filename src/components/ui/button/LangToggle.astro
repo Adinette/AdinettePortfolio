@@ -1,0 +1,51 @@
+---
+---
+
+<button
+  type="button"
+  class="sw-btn-sm no-underline flex items-center gap-1.5 cursor-pointer font-medium hover:border-[var(--accent)] transition-colors"
+  aria-label="Changer de langue / Toggle language"
+  data-lang-toggle
+>
+  <span class="sr-only">Toggle language</span>
+  <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="text-[var(--accent)]">
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="2" y1="12" x2="22" y2="12"></line>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+  </svg>
+  <span class="lang-text-fr font-semibold">FR</span>
+  <span class="lang-text-en font-semibold">EN</span>
+</button>
+
+<script is:inline>
+  (function () {
+    const storageKey = 'lang';
+    const root = document.documentElement;
+    const btn = document.querySelector('[data-lang-toggle]');
+
+    function applyLang(lang) {
+      root.dataset.lang = lang;
+      root.setAttribute('lang', lang);
+    }
+
+    function getInitialLang() {
+      const saved = localStorage.getItem(storageKey);
+      if (saved === 'fr' || saved === 'en') return saved;
+      return root.dataset.lang || 'fr';
+    }
+
+    let current = getInitialLang();
+    applyLang(current);
+
+    btn?.addEventListener('click', () => {
+      current = current === 'fr' ? 'en' : 'fr';
+      localStorage.setItem(storageKey, current);
+      applyLang(current);
+    });
+  })();
+</script>
+
+<style is:inline>
+  html[data-lang="en"] [data-lang-toggle] .lang-text-fr { display: none; }
+  html:not([data-lang="en"]) [data-lang-toggle] .lang-text-en { display: none; }
+</style>

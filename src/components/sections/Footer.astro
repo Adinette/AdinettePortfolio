@@ -1,54 +1,47 @@
 ---
+import { author } from '../../data/author';
+import Button from '../ui/button/Button.astro';
+
 const today = new Date();
-import contactIconRaw from "../../assets/icons/contact-icon.svg?raw";
-import Button from "../ui/button/Button.astro";
-
-function sanitizeToWhite(svg: string, size = 18) {
-  let s = svg
-    .replace(/<\?xml[\s\S]*?\?>/g, "")
-    .replace(/<!--([\s\S]*?)-->/g, "")
-    .replace(/width=\"[^\"]*\"/g, "")
-    .replace(/height=\"[^\"]*\"/g, "")
-    // Ensure shapes are visible: use white via currentColor on fill, drop strokes
-    .replace(/fill=\"[^\"]*\"/gi, 'fill="currentColor"')
-    .replace(/stroke=\"[^\"]*\"/gi, 'stroke="none"');
-  s = s.replace(/<svg([^>]*)>/, (m, attrs) => `<svg${attrs} width="${size}" height="${size}">`);
-  return s;
-}
-
-const contactIcon = sanitizeToWhite(contactIconRaw);
-const feedUrl = new URL('rss.xml', Astro.site).toString();
-const feedlyUrl = `https://feedly.com/i/subscription/feed/${feedUrl}`;
-const inoreaderUrl = `https://www.inoreader.com/?add_feed=${feedUrl}`;
 ---
 
-<footer id="contact" class="py-12 px-4 text-center">
-  <h2 class="text-2xl md:text-3xl font-semibold text-foreground">Want to work with me?</h2>
-  <p class="mt-2 text-[color:var(--color-text-muted)]">Let's build something together!</p>
-  <div class="mt-6 flex justify-center">
-    <Button href="https://www.linkedin.com/in/adinette-dougloui-768259269" variant="secondary" size="md" >
-      <span class="inline-flex" aria-hidden="true" set:html={contactIcon} />
-      Get in touch
-    </Button>
+<footer id="contact" class="bg-background border-t border-[color:var(--color-border-light)] text-[color:var(--color-text-secondary)] py-12 px-4">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+    <div class="max-w-md">
+      <h2 class="text-2xl font-bold text-[color:var(--color-text-primary)] mb-2">
+        <span class="lang-fr">Discutons de votre projet</span>
+        <span class="lang-en">Let's talk about your project</span>
+      </h2>
+      <p class="text-sm text-[color:var(--color-text-secondary)] mb-4">
+        <span class="lang-fr">Ouverte aux opportunités de développement web Front-End en CDI, CDD ou Freelance.</span>
+        <span class="lang-en">Open for Front-End Web Development opportunities (Full-time, Contract, or Freelance).</span>
+      </p>
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
+        <a
+          href={`mailto:${author.email}`}
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--accent)] text-white font-semibold text-sm hover:opacity-90 transition-opacity no-underline"
+        >
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>{author.email}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center md:items-end gap-3">
+      <div class="flex items-center gap-4">
+        <a href={author.github} target="_blank" aria-label="GitHub" class="text-[color:var(--color-text-secondary)] hover:text-[var(--accent)] transition-colors">
+          <svg viewBox="0 0 16 16" width="22" height="22" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+        </a>
+        <a href={author.linkedin} target="_blank" aria-label="LinkedIn" class="text-[color:var(--color-text-secondary)] hover:text-[var(--accent)] transition-colors">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+        </a>
+      </div>
+      <p class="text-xs text-[color:var(--color-text-secondary)]">
+        &copy; {today.getFullYear()} {author.name}. <span class="lang-fr">Tous droits réservés.</span><span class="lang-en">All rights reserved.</span>
+      </p>
+    </div>
   </div>
-  <div class="mt-6 text-sm text-[color:var(--color-text-muted)]">Made by : <a href="https://www.linkedin.com/in/adinette-dougloui-768259269" class="hover:text-[color:var(--accent)]">Adinette.</a></div>
-  <!-- <div class="mt-6 flex items-center justify-center gap-4 text-sm">
-    <a class="sw-btn-sm" href={feedlyUrl} target="_blank" rel="noopener noreferrer" aria-label="Subscribe in Feedly">Feedly</a>
-    <button class="sw-btn-sm" type="button" data-copy={feedUrl} aria-label="Copy RSS link">Copy RSS link</button>
-    <a class="sw-btn-sm" href="/blog/" aria-label="Browse all posts">All posts</a>
-  </div> -->
-  <script type="module">
-    document.addEventListener('click', (e) => {
-      const target = e.target;
-      if (!(target instanceof HTMLElement)) return;
-      if (target.matches('button[data-copy]')) {
-        const url = target.getAttribute('data-copy');
-        if (!url) return;
-        navigator.clipboard?.writeText(url);
-        const original = target.textContent || 'Copy RSS link';
-        target.textContent = 'Copied!';
-        setTimeout(() => { target.textContent = original; }, 1500);
-      }
-    });
-  </script>
 </footer>

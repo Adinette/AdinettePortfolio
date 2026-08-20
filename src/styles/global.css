@@ -7,6 +7,15 @@
 /* Project-specific utilities */
 @import "./utilities.css";
 
+/* i18n Language Switcher Visibility Rules */
+html[data-lang="fr"] .lang-en,
+html:not([data-lang="en"]) .lang-en {
+  display: none !important;
+}
+
+html[data-lang="en"] .lang-fr {
+  display: none !important;
+}
 
 @font-face {
 	font-family: "Atkinson";
@@ -34,6 +43,7 @@ body {
 	font-size: 20px;
 	line-height: 1.7;
 }
+
 /* Default main layout for legacy pages.
    Pages that manage layout with utility classes should add class `use-utility-layout` to <main> to opt out. */
 main:not(.use-utility-layout) {
@@ -42,6 +52,7 @@ main:not(.use-utility-layout) {
     margin: auto;
     padding: 3em 1em;
 }
+
 h1,
 h2,
 h3,
@@ -49,7 +60,7 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
+	color: var(--color-text-primary);
 	line-height: 1.2;
 }
 h1 {
@@ -140,12 +151,8 @@ hr {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
 	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }

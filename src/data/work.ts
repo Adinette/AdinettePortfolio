@@ -11,57 +11,92 @@ export const workIcons = {
 
 export const work = [
   {
-    title: "Internship Front-End Developer",
-    company: "Sanlam Allianz",
-    region: "Bénin",
-    description:
-      "Architected event‑driven payment services with idempotency and retries, introduced Kafka for async processing, enforced API versioning, and drove observability with structured logging and tracing.",
+    titleFr: "Développeur web front-end stagiaire",
+    titleEn: "Front-End Developer Intern",
+    company: "Sanlam Assurances",
+    regionFr: "Bénin",
+    regionEn: "Benin",
+    periodFr: "Mai 2025 – Octobre 2025",
+    periodEn: "May 2025 – October 2025",
+    descriptionFr:
+      "Conception d'un éditeur visuel no-code / drag-and-drop de règles métier d'assurance (Vue.js 3, Vue Flow, TypeScript) avec gestion d'états complexes et validation temps réel. Déploiement également d'un module d'évaluation des performances des employés avec suivi d'indicateurs et reporting temps réel.",
+    descriptionEn:
+      "Engineered a no-code visual drag-and-drop business rules editor (Vue.js 3, Vue Flow, TypeScript) featuring complex state management and real-time validation. Also deployed an employee performance evaluation module with real-time KPI tracking.",
     technologies: [
-      "JavaScript",
-      "CSS",
+      "Vue.js 3",
+      "Vue Flow",
       "TypeScript",
-      "Vue.js",
+      "Pinia",
       "Tailwind CSS",
+      "REST APIs"
     ],
   },
   {
-    title: "Internship Front-End Developer",
-    company: "Confledis SAS ",
-    region: "France",
-    description:
-      "Owned the design system and SSR/ISR strategy, improved Core Web Vitals (LCP/INP) into the green, and shipped accessible UI components with strong tests and story coverage.",
+    titleFr: "Développeur web front-end stagiaire",
+    titleEn: "Front-End Developer Intern",
+    company: "Confledis SAS",
+    regionFr: "France / Remote",
+    regionEn: "France / Remote",
+    periodFr: "Septembre 2024 – Décembre 2024",
+    periodEn: "September 2024 – December 2024",
+    descriptionFr:
+      "Développement d'une plateforme e-Santé bivalente (Next.js, Ionic) pour la prise de rendez-vous (interfaces patients & médecins). Synchronisation fluide des données médicales, gestion des flux d'authentification multi-rôles et déploiement cloud via pipelines CI/CD sur AWS Amplify.",
+    descriptionEn:
+      "Developed a dual-sided e-Health appointment booking platform (Next.js, Ionic) for patients and doctors. Managed medical data sync, multi-role auth flows, and cloud CI/CD deployment on AWS Amplify.",
     technologies: [
-      "JavaScript",
-      "TypeScript",
-      "CSS",
       "Next.js",
       "Ionic",
+      "TypeScript",
       "AWS Amplify",
+      "CI/CD Pipelines",
+      "Multi-role Auth"
     ],
   },
   {
-    title: "Internship Front-End Developer",
+    titleFr: "Développeur web front-end stagiaire",
+    titleEn: "Front-End Developer Intern",
     company: "Intside Sarl",
-    region: "Bénin",
-    description:
-      "Built MVPs end‑to‑end: designed REST/GraphQL APIs, set up CI/CD with preview environments, introduced feature flags, and migrated data to Postgres.",
+    regionFr: "Bénin",
+    regionEn: "Benin",
+    periodFr: "Mars 2023 – Septembre 2024",
+    periodEn: "March 2023 – September 2024",
+    descriptionFr:
+      "Intégration haute fidélité de maquettes Figma complexes pour des applications web internationales. Structuration d'une architecture modulaire multilingue (i18n), optimisation SEO, accélération des temps de chargement et consommation d'APIs REST sécurisées.",
+    descriptionEn:
+      "High-fidelity integration of complex Figma mocks for international web apps. Architected modular i18n localization, SEO optimization, load time acceleration, and secure REST API consumption.",
     technologies: [
-      "JavaScript",
-      "TypeScript",
-      "CSS",
+      "Next.js",
+      "Vue.js",
+      "React.js",
+      "Nuxt.js",
       "Bootstrap",
       "Tailwind CSS",
-      "React.js",
-      "Vue.js",
-      "Next.js",
-      "Nuxt.js",
-      "Gitlab Actions",
-      "Jira",
+      "i18n",
+      "SEO",
       "Figma",
-      "Argile methodology",
+      "GitLab",
+      "Jira"
+    ],
+  },
+  {
+    titleFr: "Participant Bootcamp - L'Arène",
+    titleEn: "Bootcamp Participant - L'Arène",
+    company: "Initiative Etrilabs",
+    regionFr: "Bénin",
+    regionEn: "Benin",
+    periodFr: "Avril 2023 – Mai 2023",
+    periodEn: "April 2023 – May 2023",
+    descriptionFr:
+      "Immersion pratique axée sur les meilleures pratiques de développement web moderne, le travail en équipe agile et le perfectionnement sur l'écosystème JavaScript.",
+    descriptionEn:
+      "Intensive bootcamp focused on modern web development standards, agile software teamwork, and advanced JavaScript ecosystem practice.",
+    technologies: [
+      "JavaScript (ES6+)",
+      "HTML5 / CSS3",
+      "Agile / Scrum",
+      "Git"
     ],
   },
 ];
 
 export type WorkItem = (typeof work)[number];
-

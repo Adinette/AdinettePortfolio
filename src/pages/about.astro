@@ -1,27 +1,96 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
-import GlowLineSeparator from '@/components/ui/separator/GlowLineSeparator.astro';
-const pageTitle = 'About Me';
-const pageDescription = 'Learn more about my background and approach to software engineering.';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/sections/Header.astro';
+import Footer from '../components/sections/Footer.astro';
+import Studies from '../components/sections/Studies.astro';
+import WorkExperience from '../components/sections/WorkExperience.astro';
+import SkillsSection from '../components/sections/SkillsSection.astro';
+import { SITE_TITLE } from '../consts';
+import { author } from '../data/author';
+import { studies } from '../data/studies';
+import { work } from '../data/work';
+import { skills } from '../data/skills';
+import ArrowSeparator from '../components/ui/separator/ArrowSeparator.astro';
 ---
 
-<Layout title={pageTitle} description={pageDescription} pubDate={new Date()} showHeader={false}>
-  <p>
-    Hey! I'm a junior software engineer who loves designing reliable systems and shipping products that feel great to use.
-  </p>
-  <p>
-    I work across the stack with TypeScript, React/Next.js and Vue/Nuxt.js. I care deeply about readable code,
-    strong tests, and observability. My approach: ship small, iterate quickly, measure outcomes.
-  </p>
-  <p>
-    Recent highlights include the implementation of a rule editor with the VueFlow plugin 
-    and integration with APIs with preview environments and quality controls.
-  </p>
-  <p>
-    Outside of my work on features, I enjoy mentoring, documenting, and creating design system components that enable easy and fast collaboration with the team.
-Always learning, I am always excited to collaborate on important problems.
-  </p>
+<!doctype html>
+<html lang="fr" data-theme="dark" class="dark">
+  <head>
+    <BaseHead title={`À propos - ${SITE_TITLE}`} description={`En savoir plus sur ${author.name}, Développeur Web Front-End.`} />
+  </head>
+  <body>
+    <Header />
+    <main class="use-utility-layout max-w-6xl mx-auto px-4 py-12">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-[color:var(--color-text-primary)] mb-4">
+          <span class="lang-fr">À propos de moi</span>
+          <span class="lang-en">About Me</span>
+        </h1>
+        <p class="text-base md:text-lg text-[color:var(--color-text-secondary)] leading-relaxed">
+          <span class="lang-fr">
+            Passionnée par le développement Front-End et le design d'interfaces réactives, je transforme des maquettes complexes en applications web ultra-performantes et intuitives.
+          </span>
+          <span class="lang-en">
+            Passionate about Front-End engineering and reactive UI design, I turn complex mockups into high-performance, intuitive web applications.
+          </span>
+        </p>
+      </div>
 
-  <GlowLineSeparator />
+      <div class="card-surface p-8 mb-12 hover-lift">
+        <h2 class="text-2xl font-bold text-[color:var(--color-text-primary)] mb-4">
+          <span class="lang-fr">Mon Approche & Philosophie</span>
+          <span class="lang-en">My Approach & Philosophy</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-[color:var(--color-text-secondary)] leading-relaxed">
+          <div>
+            <h3 class="text-lg font-semibold text-[var(--accent)] mb-2">
+              <span class="lang-fr">Fidélité UI & Ergonomie</span>
+              <span class="lang-en">UI Fidelity & Ergonomics</span>
+            </h3>
+            <p class="lang-fr">
+              Je porte une attention minutieuse aux détails visuels et aux interactions. Chaque pixel conçu sur Figma est fidèle dans le code, en veillant à l'ergonomie, au responsive design et à l'accessibilité.
+            </p>
+            <p class="lang-en">
+              I pay rigorous attention to visual details and user interactions. Every Figma pixel is faithfully reproduced in code, optimizing for usability, responsiveness, and accessibility.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-[var(--accent)] mb-2">
+              <span class="lang-fr">Code Propre & Scalabilité</span>
+              <span class="lang-en">Clean Code & Scalability</span>
+            </h3>
+            <p class="lang-fr">
+              Utilisation de TypeScript pour un typage rigoureux, structuration modulaire des composants avec Vue.js 3 / Next.js et gestion d'état centralisée avec Pinia ou Redux.
+            </p>
+            <p class="lang-en">
+              Leveraging TypeScript for strong typing, modular component structuring with Vue.js 3 / Next.js, and centralized state management using Pinia or Redux.
+            </p>
+          </div>
+        </div>
+      </div>
 
-</Layout>
+      <WorkExperience 
+        titleFr="Parcours Professionnel"
+        titleEn="Career Path"
+        items={work}
+      />
+
+      <ArrowSeparator />
+
+      <Studies 
+        titleFr="Formations & Immersion"
+        titleEn="Education & Degree"
+        items={studies}
+      />
+
+      <ArrowSeparator />
+
+      <SkillsSection 
+        titleFr="Écosystème Technique"
+        titleEn="Technical Stack"
+        skills={skills}
+      />
+    </main>
+    <Footer />
+  </body>
+</html>

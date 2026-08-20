@@ -59,7 +59,7 @@ const imageUrl = new URL(image.src, siteOrigin).toString();
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={SITE_TITLE} />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="fr_FR" />
 <meta property="og:url" content={absoluteUrl} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
@@ -68,8 +68,16 @@ const imageUrl = new URL(image.src, siteOrigin).toString();
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@guihubie" />
 <meta property="twitter:url" content={absoluteUrl} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={imageUrl} />
+
+<!-- Fast i18n initialization script -->
+<script is:inline>
+  (function() {
+    const saved = localStorage.getItem('lang');
+    const lang = (saved === 'fr' || saved === 'en') ? saved : 'fr';
+    document.documentElement.dataset.lang = lang;
+  })();
+</script>
