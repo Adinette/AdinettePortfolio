@@ -36,7 +36,7 @@ export const projects: ProjectItem[] = [
     ],
     ctaTextFr: "En savoir plus →",
     ctaTextEn: "Learn More →",
-    ctaLink: "https://financial-control-pi-five.vercel.app/login",
+    ctaLink: "https://financial-control-pi-five.vercel.app/",
     badgeFr: "Full-Stack Vue.js",
     badgeEn: "Full-Stack Vue.js"
   },
